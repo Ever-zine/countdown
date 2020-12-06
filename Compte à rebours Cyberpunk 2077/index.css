@@ -1,0 +1,102 @@
+
+body{
+  font-family: Roboto;
+/*  background-color: #fcee09;*/
+    background-color: #212121;
+/*  background-image: url(Images/bgCyberpunk.jpg);*/
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 0px;
+}
+
+.tete{
+/*  color: rgb(1, 134, 23);*/
+  color: white;
+  margin-left: 10px;
+  position: fixed;
+  text-decoration: none;
+  z-index: 5;
+}
+
+/*.imgBackground {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  top: 200px;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -250px;
+  z-index: 0;
+}*/
+
+.linkOne{
+  margin-left: 14px;
+  margin-bottom: 8px;
+}
+
+.twitter{
+  width: 39.34375px;
+  height: 32px;
+}
+
+.billeterie{
+  width: 56.75px;
+  height: 47.25px;
+}
+
+.links{
+  position: fixed;
+  flex-direction: column;
+/*  top: 220px;*/
+  bottom: 15px;
+  right: 15px;
+}
+
+.compteurDiv {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row ltr;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.text {
+  color: #fcee09;
+  font-size: 25px;
+  margin-top: 50px;
+  margin-right: 80px;
+  padding-left: 10px;
+  padding-right: 10px;
+  order: 2;
+  border-radius: 5px / 5px;
+  /*border: 2px #424242a6 solid;*/
+  background-color: #424242a6;
+  z-index: 1;
+}
+
+.textCompteur {
+  font-size: 50px;
+  font-weight: bold;
+  color: #00f0ff;
+  text-align: center;
+}
+
+.sousTitre{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.photo{
+  z-index: 2;
+}
+
+a {
+  color: black;
+}
+
+.dateTMCUP {
+  text-align: center;
+}
+
+https://www.google.com/calendar/render?action=TEMPLATE&text=rendez%20vous&dates=20201119T070000Z&ctz=Europe/Paris
