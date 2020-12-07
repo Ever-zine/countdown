@@ -2,8 +2,8 @@
 body{
   font-family: Roboto;
 /*  background-color: #fcee09;*/
-    background-color: #212121;
-/*  background-image: url(Images/bgCyberpunk.jpg);*/
+/*  background-color: #212121;*/
+  background-image: url(Images/bgCyberpunk.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-position-y: 0px;
