@@ -16,6 +16,9 @@
         let dateAjd = new Date(Date.now());
         console.log(dateAjd);
         let tempsRestant = dateSortie - dateAjd;
+        if(tempsRestant<=0) {
+          tempsRestant = 0;
+        }
         console.log(tempsRestant);
         //Passage du temps restant (qui est en ms) en jours heures minutes et secondes into faire en sorte de pouvoir y afficher dans de du le l'html
         //var days = Math.floor( tempsRestant/(1000*60*60*24) );
