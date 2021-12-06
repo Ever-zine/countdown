@@ -23,9 +23,13 @@
       let dateAjd = new Date(Date.now());
       let tempsRestant = dateTMCUP - dateAjd;
       console.log(tempsRestant);
-      //Passage du temps restant (qui est en ms) en jours heures minutes et secondes et écriture
+      //Passage du temps restant (qui est en ms) en annés jours heures minutes et secondes et écriture
+      var years = Math.floor( tempsRestant/(31540000000))
+      document.getElementById("yearsRemaining").innerHTML = years;
+//      Ouais des trucs pour faire genre
       var days = Math.floor( tempsRestant/(1000*60*60*24) );
       document.getElementById("daysRemaining").innerHTML = days;
+      console.log(years);
 //      document.write("<p> Jours : " + days + "</p>");
       console.log(days);
       var hours = Math.floor( (tempsRestant/(1000*60*60)) % 24 );
@@ -47,6 +51,7 @@
   </script>
   <body>
     <p class="title">Vous allez mourir dans :</p>
+    <p class="compteur"><span id="yeatsRemaining"></span> ans</p>
     <p class="compteur"><span id="daysRemaining"></span> jours</p>
     <p class="compteur"><span id="hoursRemaining"></span> heures</p>
     <p class="compteur"><span id="minutesRemaining"></span> minutes</p>
