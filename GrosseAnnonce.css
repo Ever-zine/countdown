@@ -1,10 +1,13 @@
+* {
+    margin: 0;  
+}
 
 body{
     font-family: Roboto;
   /*  background-color: #fcee09;*/
       background-color: #212121;
-  /*  background-image: url(Images/bgCyberpunk.jpg);*/
-    background-repeat: no-repeat;
+    /* background-image: url(Images/Oeuvre_dart.png); */
+    background-repeat: repeat;
     background-position: center;
     background-position-y: 0px;
   }
@@ -70,14 +73,14 @@ body{
     order: 2;
     border-radius: 5px / 5px;
     /*border: 2px #424242a6 solid;*/
-    background-color: #424242a6;
+    /* background-color: #424242a6; */  
     z-index: 1;
   }
   
   .textCompteur {
     font-size: 50px;
     font-weight: bold;
-    color: rgb(42, 75, 224);
+    color: rgb(45, 235, 187);
     text-align: center;
   }
   
@@ -97,6 +100,10 @@ body{
   
   .dateTMCUP {
     text-align: center;
+  }
+
+  .imagePanier {
+      align-items: center;
   }
   
   https://www.google.com/calendar/render?action=TEMPLATE&text=rendez%20vous&dates=20201119T070000Z&ctz=Europe/Paris
