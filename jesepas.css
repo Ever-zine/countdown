@@ -75,7 +75,7 @@ body{
   }
   
   .text {
-    color: white;
+    color: black;
     font-size: 25px;
     order: 2;
     border-radius: 5px / 5px;
