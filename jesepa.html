@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="jesepas.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>❤️❤️</title>
+  </head>
+  <body>
+        <!--<a href="indexMobile.html">
+        <p>Version Mobile (WIP)</p>
+        </a>-->
+        <div>
+        <div class="compteurDiv">
+        <div class="text">
+            <p class="sousTitre">Eh c'est le sous-titre</p>
+            <!--<span id="daysRemaining"></span> jours -->
+            <span id="hoursRemaining"></span> heures 
+            <span id="minutesRemaining"></span> minutes 
+            <span id="secondsRemaining"></span> secondes 
+            </p>
+            <p class="dateTMCUP">Eh c'est un autre sous tire taceshaflkd</p>
+        </div>
+        </div>
+        </div>
+        <canvas id="c"></canvas>
+  </body>
+  <script>
+  </script>
+
+<script>
+    //Date de l'event (avec jor juin = 5 et pas 6)
+    const dateSortie = new Date(2022, 0, 7, 21, 25);
+
+    function afficheTemps() {
+      //Temps restant en millisecondes
+      let dateAjd = new Date(Date.now());
+      console.log(dateAjd);
+      let tempsRestant = dateSortie - dateAjd;
+      if(tempsRestant<=0) {
+        tempsRestant = 0;
+      }
+      console.log(tempsRestant);
+      //Passage du temps restant (qui est en ms) en jours heures minutes et secondes into faire en sorte de pouvoir y afficher dans de du le l'html
+      //var days = Math.floor( tempsRestant/(1000*60*60*24) );
+      //document.getElementById("daysRemaining").innerHTML = days;
+      //console.log(days);
+      var hours = Math.floor( (tempsRestant/(1000*60*60)));
+      document.getElementById("hoursRemaining").innerHTML = hours;
+      console.log(hours);
+      var minutes = Math.floor( (tempsRestant/1000/60) % 60 );
+      document.getElementById("minutesRemaining").innerHTML = minutes;
+      console.log(minutes);
+      var seconds = Math.floor( (tempsRestant/1000) % 60 );
+      document.getElementById("secondsRemaining").innerHTML = seconds;
+      console.log(seconds);
+    };
+    //Répétition de la fonction toutes les secondes
+    setInterval(afficheTemps, 1000);
+
+    //Et la le fond matric quoi
+    // geting canvas by Boujjou Achraf
+    var c = document.getElementById("c");
+        var ctx = c.getContext("2d");
+
+        //making the canvas full screen
+        c.height = window.innerHeight;
+        c.width = window.innerWidth;
+
+        //chinese characters - taken from the unicode charset
+        var matrix = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+        //converting the string into an array of single characters
+        matrix = matrix.split("");
+
+        var font_size = 10;
+        var columns = c.width/font_size; //number of columns for the rain
+        //an array of drops - one per column
+        var drops = [];
+        //x below is the x coordinate
+        //1 = y co-ordinate of the drop(same for every drop initially)
+        for(var x = 0; x < columns; x++)
+            drops[x] = 1; 
+
+        //drawing the characters
+        function draw()
+        {
+            //Black BG for the canvas
+            //translucent BG to show trail
+            ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+            ctx.fillRect(0, 0, c.width, c.height);
+
+            ctx.fillStyle = "#03A062";//green text
+            ctx.font = font_size + "px arial";
+            //looping over drops
+            for(var i = 0; i < drops.length; i++)
+            {
+                //a random chinese character to print
+                var text = matrix[Math.floor(Math.random()*matrix.length)];
+                //x = i*font_size, y = value of drops[i]*font_size
+                ctx.fillText(text, i*font_size, drops[i]*font_size);
+
+                //sending the drop back to the top randomly after it has crossed the screen
+                //adding a randomness to the reset to make the drops scattered on the Y axis
+                if(drops[i]*font_size > c.height && Math.random() > 0.975)
+                    drops[i] = 0;
+
+                //incrementing Y coordinate
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 35);
+
+  </script>
+</html>
