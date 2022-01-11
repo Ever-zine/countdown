@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>
+      ❤️❤️❤️
+    </title>
+    <style type="text/css">
+    html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
+    article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+    body{line-height:1}
+    ol,ul{list-style:none}
+    blockquote,q{quotes:none}
+    blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+    table{border-collapse:collapse;border-spacing:0}
+      /* FIN reset */
+
+        /* DEBUT CSS diaporama */
+    .diaporama, .diaporama:after {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      left: 0px;
+      z-index: 0;
+      opacity: 50%;
+    }
+
+    body {
+        font-family: Roboto;
+    }
+
+    .diaporama li span {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      color: transparent;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: none;
+      opacity: 0;
+      z-index: 0;
+      -webkit-backface-visibility: hidden;
+      -webkit-animation: imageAnimation 36s linear infinite 0s;
+      -moz-animation: imageAnimation 36s linear infinite 0s;
+      -o-animation: imageAnimation 36s linear infinite 0s;
+      -ms-animation: imageAnimation 36s linear infinite 0s;
+      animation: imageAnimation 36s linear infinite 0s;
+    }
+
+    .diaporama li:nth-child(1) span {
+      background-image: url(images/livrepackoffice.png);
+    }
+
+    .diaporama li:nth-child(2) span {
+      background-image: url(images/fnac.png);
+      -webkit-animation-delay: 6s;
+      -moz-animation-delay: 6s;
+      -o-animation-delay: 6s;
+      -ms-animation-delay: 6s;
+      animation-delay: 6s;
+    }
+
+    .diaporama li:nth-child(3) span {
+      background-image: url(images/kirroyal.png);
+      -webkit-animation-delay: 12s;
+      -moz-animation-delay: 12s;
+      -o-animation-delay: 12s;
+      -ms-animation-delay: 12s;
+      animation-delay: 12s;
+    }
+
+    .diaporama li:nth-child(4) span {
+      background-image: url(images/diaboloorange.png);
+      -webkit-animation-delay: 18s;
+      -moz-animation-delay: 18s;
+      -o-animation-delay: 18s;
+      -ms-animation-delay: 18s;
+      animation-delay: 18s;
+    }
+
+    .diaporama li:nth-child(5) span {
+      background-image: url(images/couettesouris.png);
+      -webkit-animation-delay: 24s;
+      -moz-animation-delay: 24s;
+      -o-animation-delay: 24s;
+      -ms-animation-delay: 24s;
+      animation-delay: 24s;
+    }
+
+    .diaporama li:nth-child(6) span {
+      background-image: url(images/coeurdinfo.png);
+      -webkit-animation-delay: 30s;
+      -moz-animation-delay: 30s;
+      -o-animation-delay: 30s;
+      -ms-animation-delay: 30s;
+      animation-delay: 30s;
+    }
+
+    .diaporama li:nth-child(7) span {
+      background-image: url(images/kaamelott.png);
+      -webkit-animation-delay: 30s;
+      -moz-animation-delay: 30s;
+      -o-animation-delay: 30s;
+      -ms-animation-delay: 30s;
+      animation-delay: 30s;
+    }
+
+    .diaporama li:nth-child(8) span {
+      background-image: url(images/cableHdmi.png);
+      -webkit-animation-delay: 30s;
+      -moz-animation-delay: 30s;
+      -o-animation-delay: 30s;
+      -ms-animation-delay: 30s;
+      animation-delay: 30s;
+    }
+
+    .diaporama li:nth-child(9) span {
+      background-image: url(images/rennejour.png);
+      -webkit-animation-delay: 30s;
+      -moz-animation-delay: 30s;
+      -o-animation-delay: 30s;
+      -ms-animation-delay: 30s;
+      animation-delay: 30s;
+    }
+
+    .diaporama li:nth-child(10) span {
+      background-image: url(images/fruitzgourde.png);
+      -webkit-animation-delay: 30s;
+      -moz-animation-delay: 30s;
+      -o-animation-delay: 30s;
+      -ms-animation-delay: 30s;
+      animation-delay: 30s;
+    }
+
+
+    /* Animation diaporama images */
+
+    @-webkit-keyframes imageAnimation {
+      0% {
+        opacity: 0;
+        -webkit-animation-timing-function: ease-in;
+      }
+
+      8% {
+        opacity: 1;
+        -webkit-animation-timing-function: ease-out;
+      }
+
+      17% {
+        opacity: 1;
+      }
+
+      25% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @-moz-keyframes imageAnimation {
+      0% {
+        opacity: 0;
+        -moz-animation-timing-function: ease-in;
+      }
+
+      8% {
+        opacity: 1;
+        -moz-animation-timing-function: ease-out;
+      }
+
+      17% {
+        opacity: 1;
+      }
+
+      25% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @-o-keyframes imageAnimation {
+      0% {
+        opacity: 0;
+        -o-animation-timing-function: ease-in;
+      }
+
+      8% {
+        opacity: 1;
+        -o-animation-timing-function: ease-out;
+      }
+
+      17% {
+        opacity: 1;
+      }
+
+      25% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @-ms-keyframes imageAnimation {
+      0% {
+        opacity: 0;
+        -ms-animation-timing-function: ease-in;
+      }
+
+      8% {
+        opacity: 1;
+        -ms-animation-timing-function: ease-out;
+      }
+
+      17% {
+        opacity: 1;
+      }
+
+      25% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes imageAnimation {
+      0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+      }
+
+      8% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+      }
+
+      17% {
+        opacity: 1;
+      }
+
+      25% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+         /* FIN CSS diaporama */
+
+    .menu{
+      width: 100%;
+      background: #000;
+      color: #FFF;
+      z-index: 9999;
+      position: relative;
+      opacity: 0.5;
+      text-align: center;
+      height: 50px;
+    }
+    .menu p{
+      padding:15px;
+      font-size: 20px
+    }
+
+    .compteur {
+    display: flex;
+    margin: auto;
+    width: 50%;
+    margin-top: 20%;
+    justify-content: space-between;
+    font-size: 50px;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.containerCompte {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    justify-content: 10px;
+    flex-wrap: wrap;
+    z-index: 9999;
+}
+
+.nombresAffiches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+    </style>
+  <body>
+
+    <div class="containerCompte">
+        <div class="compteur">
+            <div class="nombresAffiches">
+              <span id="hoursRemaining"></span>
+              <p>h</p>
+            </div> 
+            <div class="nombresAffiches">
+              <span id="minutesRemaining"></span> 
+              <p>min</p>
+            </div>
+            <div class="nombresAffiches">
+              <span id="secondsRemaining"></span>
+              <p>sec</p>
+            </div>
+        </div>
+    </div>
+    <ul class="diaporama">
+        <li>
+          <span>Image 01</span>
+        </li>
+        <li>
+          <span>Image 02</span>
+        </li>
+        <li>
+          <span>Image 03</span>
+        </li>
+        <li>
+          <span>Image 04</span>
+        </li>
+        <li>
+          <span>Image 05</span>
+        </li>
+        <li>
+          <span>Image 06</span>
+        </li>
+      </ul>
+
+    <script>
+        //Date de l'event (avec jor juin = 5 et pas 6)
+        const dateSortie = new Date(2022, 0, 12, 19, 25);
+  
+        function afficheTemps() {
+          //Temps restant en millisecondes
+          let dateAjd = new Date(Date.now());
+          console.log(dateAjd);
+          let tempsRestant = dateSortie - dateAjd;
+          if(tempsRestant<=0) {
+            tempsRestant = 0;
+          }
+          console.log(tempsRestant);
+          //Passage du temps restant (qui est en ms) en jours heures minutes et secondes into faire en sorte de pouvoir y afficher dans de du le l'html
+          //var days = Math.floor( tempsRestant/(1000*60*60*24) );
+          //document.getElementById("daysRemaining").innerHTML = days;
+          //console.log(days);
+          var hours = Math.floor( (tempsRestant/(1000*60*60)));
+          document.getElementById("hoursRemaining").innerHTML = hours;
+          console.log(hours);
+          var minutes = Math.floor( (tempsRestant/1000/60) % 60 );
+          document.getElementById("minutesRemaining").innerHTML = minutes;
+          console.log(minutes);
+          var seconds = Math.floor( (tempsRestant/1000) % 60 );
+          document.getElementById("secondsRemaining").innerHTML = seconds;
+          console.log(seconds);
+        };
+        //Répétition de la fonction toutes les secondes
+        setInterval(afficheTemps, 1000);
+      </script>  
+</body>
+</head>
+</html>
+
