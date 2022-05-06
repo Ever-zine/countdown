@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--  <LINK REL="SHORTCUT ICON" href="Images/favicon.ico"> -->
+    <title>Compte à rebours TM CUP 2020</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="CSSDeLaNouvelleVersion.css">
+  </head>
+
+  <script>
+    //Date de l'event (avec jor juin = 5 et pas 6)
+    const dateSortie = new Date(2022, 4, 6, 19,  25);
+
+    function afficheTemps() {
+      //Temps restant en millisecondes
+      let dateAjd = new Date(Date.now());
+      console.log(dateAjd);
+      let tempsRestant = dateSortie - dateAjd; 
+      if(tempsRestant<=0) {
+        tempsRestant = 0;
+      }
+      console.log(tempsRestant);
+      //Passage du temps restant (qui est en ms) en jours heures minutes et secondes into faire en sorte de pouvoir y afficher dans de du le l'html
+      //var days = Math.floor( tempsRestant/(1000*60*60*24) );
+      //document.getElementById("daysRemaining").innerHTML = days;
+      //console.log(days);
+      var hours = Math.floor( (tempsRestant/(1000*60*60)));
+      document.getElementById("hoursRemaining").innerHTML = hours;
+      console.log(hours);
+      var minutes = Math.floor( (tempsRestant/1000/60) % 60 );
+      document.getElementById("minutesRemaining").innerHTML = minutes;
+      console.log(minutes);
+      var seconds = Math.floor( (tempsRestant/1000) % 60 );
+      document.getElementById("secondsRemaining").innerHTML = seconds;
+      console.log(seconds);
+    };
+    //Répétition de la fonction toutes les secondes
+    setInterval(afficheTemps, 1000);
+    </script>
+
+    <body>  
+        <!--<p class="title">Insérer texte ici</p>-->
+       <!-- <p class="compteur"><span id="daysRemaining"></span> jours</p> -->
+        <p class="compteur compteurDessus" id="heureCouleur"><span id="hoursRemaining"></span></p>
+        <p class="compteur compteurDessus" id="minuteCouleur"><span id="minutesRemaining"></span></p>
+        <p class="compteur" id="secondeCouleur"><span id="secondsRemaining"></span></p>
+        <!--<p class="dateTMCUP">Insérer texte ici</p>-->
+    </body>
+
+    <script>  
+        //Couleur random pour le texte
+        var rRandom = Math.floor(Math.random()*255);
+        var gRandom = Math.floor(Math.random()*255);
+        var bRandom = Math.floor(Math.random()*255);
+        var rFond = rRandom - 10;
+        var gFond = gRandom - 10;
+        var bFond = bRandom - 10; 
+        console.log(rRandom);
+        console.log(gRandom);
+        console.log(bRandom);
+        document.getElementById("heureCouleur").style.color = "rgb(" + rRandom + "," + gRandom + "," + bRandom + ")";
+        document.getElementById("minuteCouleur").style.color = "rgb(" + rRandom + "," + gRandom + "," + bRandom + ")";
+        document.getElementById("secondeCouleur").style.color = "rgb(" + rRandom + "," + gRandom + "," + bRandom + ")";
+    </script>
+
+</html>
