@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--  <LINK REL="SHORTCUT ICON" href="Images/favicon.ico"> -->
+    <title>Lapin, baleine & pétales</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">   
+    <link rel="stylesheet" type="text/css" media="screen" href="JeCommenceVraimentAEtreACourtDIdeesMaisCeQuiEstSurCEstQueJeSeraisJamaisACourtDAmourPourToiMaCherieDAmourQueJAimeTellement.css">
+  </head>
+
+  <script>
+    //Date de l'event (avec jor juin = 5 et pas 6)
+    const dateSortie = new Date(2022, 8, 1, 14, 05);
+
+    function afficheTemps() {
+      //Temps restant en millisecondes
+      let dateAjd = new Date(Date.now());
+      console.log(dateAjd);
+      let tempsRestant = dateSortie - dateAjd; 
+      if(tempsRestant<=0) {
+        tempsRestant = 0;
+      }
+      console.log(tempsRestant);
+      //Passage du temps restant (qui est en ms) en jours heures minutes et secondes into faire en sorte de pouvoir y afficher dans de du le l'html
+      //var days = Math.floor( tempsRestant/(1000*60*60*24) );
+      //document.getElementById("daysRemaining").innerHTML = days;
+      //console.log(days);
+      var hours = Math.floor( (tempsRestant/(1000*60*60)));
+      document.getElementById("hoursRemaining").innerHTML = hours;
+      console.log(hours);
+      var minutes = Math.floor( (tempsRestant/1000/60) % 60 );
+      document.getElementById("minutesRemaining").innerHTML = minutes;
+      console.log(minutes);
+      var seconds = Math.floor( (tempsRestant/1000) % 60 );
+      document.getElementById("secondsRemaining").innerHTML = seconds;
+      console.log(seconds);
+    };
+    //Répétition de la fonction toutes les secondes
+    setInterval(afficheTemps, 1000);
+    </script>
+
+    <body> 
+        <div id="container">
+
+        </div>   
+        <!--<p class="title">Insérer texte ici</p>-->
+       <!-- <p class="compteur"><span id="daysRemaining"></span> jours</p> -->
+        <p class="compteur compteurDessus" id="heureCouleur"><span id="hoursRemaining"></span></p>
+        <p class="compteur compteurDessus" id="minuteCouleur"><span id="minutesRemaining"></span></p>
+        <p class="compteur" id="secondeCouleur"><span id="secondsRemaining"></span></p>
+        <!--<p class="dateTMCUP">Insérer texte ici</p>-->
+    </body>
+
+    <script>  
+        var rBack = Boolean(false);
+        var gBack = Boolean(false);
+        var bBack = Boolean(false);
+        //attribution d'une couleur de base
+        var rRandom = Math.floor(Math.random()*255);
+        var gRandom = Math.floor(Math.random()*255);
+        var bRandom = Math.floor(Math.random()*255);
+        function changeCouleur() {
+            //check si doit mettre la transition en mode retour
+            (rRandom == 255) ? rBack = Boolean(true) : (rRandom == 0) ? rBack = Boolean(false) : rRandom;
+            (gRandom == 255) ? gBack = Boolean(true) : (gRandom == 0) ? gBack = Boolean(false) : gRandom;
+            (bRandom == 255) ? bBack = Boolean(true) : (bRandom == 0) ? bBack = Boolean(false) : bRandom;
+            //changement progressif de la couleur
+            (rBack) ? rRandom -= 1 : rRandom += 1;
+            (gBack) ? gRandom -= 1 : gRandom += 1;
+            (bBack) ? bRandom -= 1 : bRandom += 1;  
+            console.log(rRandom);
+            console.log(gRandom);
+            console.log(bRandom);
+            document.getElementById("heureCouleur").style.color = "rgb(" + rRandom + "," + gRandom + "," + bRandom + ")";
+            document.getElementById("minuteCouleur").style.color = "rgb(" + rRandom + "," + gRandom + "," + bRandom + ")";
+            document.getElementById("secondeCouleur").style.color = "rgb(" + rRandom + "," + gRandom + "," + bRandom + ")";
+        }
+        //Couleur random pour le texte
+        setInterval(changeCouleur, 10);
+    </script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script>
+        //Choix random de l'imgage
+        var choixImage = Math.floor(Math.random()*3);
+        console.log("Numero de l'image : " + choixImage);
+        var nomClassChoixImage;
+        if (choixImage == 0){
+            nomClassChoixImage = "dotRoses";
+        } else if (choixImage == 1){
+            nomClassChoixImage = "dotBleuLapin";
+        } else if (choixImage == 2){
+            nomClassChoixImage = "dotBaleine";
+        }
+        console.log("Nom de l'image : " + nomClassChoixImage);
+        /*
+        a Pen by DIACO : twitter.com/Diaco_ml  ||  codepen.io/MAW
+        powered by GSAP : https://www.greensock.com/
+        */
+        TweenLite.set("#container",{perspective:600})
+        TweenLite.set("img",{xPercent:"-50%",yPercent:"-50%"})
+
+        var total = 30;
+        var warp = document.getElementById("container"),	w = window.innerWidth , h = window.innerHeight;
+        
+        for (i=0; i<total; i++){ 
+        var Div = document.createElement('div');
+        TweenLite.set(Div,{attr:{class:nomClassChoixImage},x:R(0,w),y:R(-200,-150),z:R(-200,200)});
+        warp.appendChild(Div);
+        animm(Div);
+        }
+        
+        function animm(elm){   
+        TweenMax.to(elm,R(6,15),{y:h+100,ease:Linear.easeNone,repeat:-1,delay:-15});
+        TweenMax.to(elm,R(4,8),{x:'+=100',rotationZ:R(0,180),repeat:-1,yoyo:true,ease:Sine.easeInOut});
+        TweenMax.to(elm,R(2,8),{rotationX:R(0,360),rotationY:R(0,360),repeat:-1,yoyo:true,ease:Sine.easeInOut,delay:-5});
+        };
+
+        function R(min,max) {return min+Math.random()*(max-min)};
+
+
+        // a Pen by DIACO : twitter.com/Diaco_ml  ||  codepen.io/MAW
+    </script>
+
+</html>

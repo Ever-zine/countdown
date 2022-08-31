@@ -1,0 +1,61 @@
+* {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  body {
+      font-family: sans-serif;
+      background-color: #000000;
+    }
+    
+    .title {
+      font-size: 25px;
+      text-align: center;
+    }
+    
+    .compteur {
+      font-weight: bold;  
+      font-size: 15vh;
+      text-align: center;
+      -webkit-text-stroke: 2px white;  
+    }
+  
+    .compteurDessus {
+      margin-bottom: 24vh;
+    }
+    
+    a {
+      color: white;
+    }
+    
+    .dateTMCUP {
+      text-align: center;
+    }
+    
+    .dotRoses{
+        width:35px;
+        height:35px;
+        position:absolute;
+        background: url(https://image.ibb.co/kyUHab/rose.png);
+        background-size: 100% 100%;
+      }
+
+    .dotBleuLapin{
+        width:50px;
+        height:73px;
+        position:absolute;
+        /*background: url(https://image.ibb.co/kyUHab/rose.png);*/
+        background: url(Images/Lapin\ Bleu\ lapin.png);
+        background-size: 100% 100%;
+      }
+
+      .dotBaleine{
+        width:50px;
+        height:39.5px;
+        position:absolute;
+        /*background: url(https://image.ibb.co/kyUHab/rose.png);*/
+        background: url(Images/BaleineCute.png);
+        background-size: 100% 100%;
+      }
+
+    #container {width:100%; height:100%; }
