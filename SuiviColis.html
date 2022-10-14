@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="SuiviColis.css">
+    <title>Suivi de colis</title>
+</head>
+<header>
+    <img src="Images/laposte.png"/>
+</header>
+<body>
+    <div id="cadreSuivi">
+        <p id="titreCadreSuivi">Progession du suivi :</p>
+
+        <p id="pourcentage">0%</p>
+
+        <div id="barreSuivi">
+            <div id="barreProgression"></div>
+        </div>
+
+        <div id="containerTextesBarre">
+            <div class="texteBarre">
+                ❤️
+                <p>Votre colis est entre nos mains.</p>
+            </div>
+            <div class="texteBarre">
+                ❤️
+                <p>Il est en traîtement dans notre réseau.</p>
+            </div>
+            <div class="texteBarre">
+                ❤️
+                <p>Votre colis est arrivé sur son site de livraison.</p>
+            </div>
+            <div class="texteBarre">
+                ❤️
+                <p>Nous préparons votre colis pour la livraison.</p>
+            </div>
+            <div class="texteBarre">
+                ❤️  
+                <p>Votre colis à été livré.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dateSortie = new Date(2022, 9, 14, 19, 25);
+        let barre = document.getElementById("barreProgression");
+
+        console.log(dateSortie);
+
+        function afficheTemps() {
+            //Temps restant en millisecondes
+            let dateAjd = new Date(Date.now());
+            console.log(dateAjd);
+            let tempsRestant = dateSortie - dateAjd;
+            if(tempsRestant<=0) {
+                tempsRestant = 0;
+            }
+            console.log(tempsRestant);
+
+            //actualisation de la barre de progression
+            actualisationBarre(63989804, tempsRestant, barre);
+        };
+
+        function actualisationBarre(tempsBase, tempsRestant, barreProgression) {
+            let poucentageProgression = 100-tempsRestant*100/tempsBase;
+
+            console.log(poucentageProgression);
+
+            //actualisation de la barre
+            barreProgression.style.width = poucentageProgression + "%";
+
+            //actualisation du pourcentage
+            document.getElementById("pourcentage").textContent = Math.round(poucentageProgression*10)/10 + "%";
+        } 
+
+        setInterval(afficheTemps, 1000);
+    </script>
+</body>
+</html>

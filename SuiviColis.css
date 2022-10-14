@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+header {
+    background-color: #ffcb05;
+    height: 10vh;
+}
+
+header img {
+    height: 10vh;
+}
+
+#cadreSuivi {
+    align-items: center;
+    text-align: center;
+    margin-left: 10vw;
+    margin-top: 20vh;
+    padding: 1%;
+    width: 80vw;
+    border-radius: 30px;
+    border: solid grey 1px;
+}
+
+#barreSuivi {
+    margin-left: 15vw;
+    width: 50vw;
+    height: 8px;
+    border-radius: 5px;
+    background-color: #a5a5a5;
+}
+
+#barreProgression { 
+    width: 0%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #ffcb05;
+}
+
+#containerTextesBarre {
+    margin-left: 15vw;
+    display: flex;
+    width: 50vw;
+    justify-content: center;
+    gap: 50px;
+}
+
+.texteBarre p {
+    margin-top: 5px;
+}
+
+#pourcentage {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 50px;
+}
+
+#titreCadreSuivi {
+    font-size: 25px;
+}
